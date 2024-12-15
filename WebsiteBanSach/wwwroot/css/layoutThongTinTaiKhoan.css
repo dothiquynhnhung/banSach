@@ -1,0 +1,135 @@
+.main-container{
+    background-color: #F2F4F5;
+    padding: 10px;
+}
+
+.main {
+    margin: 0 auto;
+    min-height: 320px;
+    padding: 0px;
+    text-align: left;
+}
+
+ul, ol {
+    list-style: none;
+    margin: 0;
+}
+
+.main .container .container-inner {
+    padding: 10px 0;
+    padding-top: 0;
+}
+
+a {
+    color: #646464;
+    text-decoration: none;
+    transition: all 300ms ease-in 0s;
+}
+
+a:hover{
+    color:#00ab9f; 
+}
+
+.block {
+    margin-bottom: 30px;
+    position: relative;
+    background: white;
+    border: 1px solid #e6e6e6;
+    -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    min-height: 500px;
+}
+
+.progress-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 16px 10px;
+}
+
+.user-rank-info-fullname {
+    padding: 10px 0;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 100%;
+}
+
+.progress-circle {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #F2F4F5;
+    display: grid
+;
+    place-items: center;
+}
+
+.icon-rank-silver-gold {
+    width: 80px;
+    height: 80px;
+}
+
+img {
+    max-width: 100%;
+}
+
+.value-container {
+    position: relative;
+}
+
+.sidebar .block .block-content {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+}
+
+.tab-user-info-container {
+    cursor: pointer;
+    padding: 5px 0;
+}
+
+.block-content li {
+    padding: 0;
+}
+
+.block-content li strong {
+    margin-top: 0 !important;
+    margin-right: 64px;
+}
+
+.icon_see_more_gray.down {
+    transform: rotate(270deg);
+    transition: all 0.5s ease 0s;
+}
+
+.tab-user-info-container {
+    cursor: pointer;
+    padding: 5px 0;
+}
+
+.block-account .block-content li.current {
+    padding: 0;
+}
+
+.block-account .block-content li a, .block-account .block-content li.current {
+    border: none;
+    font-size: 14px;
+}
+
+.page-title h1, .title-buttons h1 {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 36px;
+    color: #333333;
+}
+
+/*  END CSS LAYOUT */

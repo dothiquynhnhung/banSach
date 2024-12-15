@@ -1,7 +1,289 @@
 ﻿
 @{
-    ViewData["Title"] = "thanhToan";
+     Layout = "_Layout";
+    ViewData["Title"] = "Cá chép BookStore - thanh toán hóa đơn";
 }
+@section LinkCss{
+    <link rel="stylesheet" type="text/css" href="~/css/thanhToan.css" />
+}
+ <div class="content">
+       <div class="wrap">
+        <div class="main">
+            <div class="main-header">
+                <a href="/" class="logo">
+					<h1 class="logo-text">Cá Chép Bookstore</h1>   
+                </a>
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="/cart">Giỏ hàng</a>
+                    </li>
+                    <li class="breadcrumb-item ">
+                        <a href="/checkouts/f6eaba79c5da46d38852c345b9c1bd16?step=1" class="breadcrumb-link">Thông tin vận chuyển</a>
+                    </li>
+                    <li class="breadcrumb-item breadcrumb-item-current">Phương thức thanh toán</li>
+                </ul>
+            </div>
+            <div class="main-content">
+                <div class="step">
+                    <div class="step-sections">
+                        <div id="section-shipping-rate" class="section">
+                            <div class="order-checkout__loading--box">
+                              <div class="order-checkout__loading--circle"></div>
+                            </div>
+                            <div class="section-header">
+                                <h2 class="section-title">Phương thức vận chuyển</h2>
+                            </div>
+                            <div class="section-content">
+                                <div class="content-box">
+                                    <div class="content-box-row">
+                                        <div class="radio-wrapper">
+                                            <label class="radio-label" for="shipping_rate_id_1532868">
+                                                <div class="radio-input">
+                                                    <input id="shipping_rate_id_1532868" class="input-radio" type="radio" name="shipping_rate_id" value="1532868" checked="">
+                                                </div>
+                                                <span class="radio-label-primary">Giao Hàng Nhanh</span>
+                                                <span class="radio-accessory content-box-emphasis">
+                                                    60,000₫
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="section-payment-method" class="section">
+                            <div class="order-checkout__loading--box">
+                                <div class="order-checkout__loading--circle">
 
-<h1>thanhToan</h1>
+                                </div>
+                            </div>
+                            <div class="section-header">
+                                <h2 class="section-title">Phương thức thanh toán</h2>
+                            </div>
+                            <div class="section-content">
+                                <div class="content-box">
+                                    <div class="radio-wrapper content-box-row">
+                                        <label class="two-page" >
+                                            <div class="radio-input payment-method-checkbox">
+                                                <input type-id="1" id="payment_method_id_1000708155" class="input-radio" name="payment_method_id" type="radio" value="1000708155">
+                                            </div>
+                                            <div class="radio-content-input">
+                                                <img class="main-img" src="https://hstatic.net/0/0/global/design/seller/image/payment/cod.svg?v=6">
+                                                <div class="content-wrapper">
+                                                <span class="radio-label-primary">Thanh toán khi giao hàng (COD)</span>
+                                                <span class="quick-tagline hidden"></span>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="radio-wrapper content-box-row">
+                                        <label class="two-page" >
+                                            <div class="radio-input payment-method-checkbox">
+                                                <input type-id="1" id="payment_method_id_1000708155" class="input-radio" name="payment_method_id" type="radio" value="1000708155">
+                                            </div>
+                                            <div class="radio-content-input">
+                                                <img class="main-img" src="https://hstatic.net/0/0/global/design/seller/image/payment/other.svg?v=6">
+                                                <div class="content-wrapper">
+                                                <span class="radio-label-primary">Chuyển khoản qua ngân hàng</span>
+                                                <span class="quick-tagline hidden"></span>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="radio-wrapper content-box-row">
+                                        <label class="two-page" >
+                                            <div class="radio-input payment-method-checkbox">
+                                                <input type-id="1" id="payment_method_id_1000708155" class="input-radio" name="payment_method_id" type="radio" value="1000708155">
+                                            </div>
+                                            <div class="radio-content-input">
+                                                <img class="main-img" src="https://hstatic.net/0/0/global/design/seller/image/payment/vnpay_new.svg?v=6">
+                                                <div class="content-wrapper">
+                                                <span class="radio-label-primary">Thẻ ATM/Visa/Master/JCB/QR Pay qua cổng VNPAY </span>
+                                                <span class="quick-tagline hidden"></span>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>   
+                    <div class="step-footer" id="step-footer-checkout">
+                       <form action="/" method="post" id="form-js">
+                            <div class="step-footer-continue-btn btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <span class="btn-content" >Đặt hàng</span>
+                                <i class="btn-spinner icon icon-button-spinner"></i>
+                            </div>
+                        </form>
+                        <a class="step-footer-previous-link" href="@Url.Action("gioHang", "GioHang")">
+                            Giỏ hàng
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="sidebar-content">
+                <div class="order-summary order-summary-is-collapsed">
+                    <h2 class="visually-hidden">
+                        Thông tin đơn hàng
+                    </h2>
+                    <div class="order-summary-sections">
+                        <div class="order-summary-section order-summary-section-product-list">
+                            <table class="product-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col"><span class="visually-hidden">Hình ảnh</span></th>
+                                        <th scope="col"><span class="visually-hidden">Mô tả</span></th>
+                                        <th scope="col"><span class="visually-hidden">Số lượng</span></th>
+                                        <th scope="col"><span class="visually-hidden">Giá</span></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="product" data-product-id="1027125194" data-variant-id="1059516180">
+                                        <td class="product-image">
+                                            <div class="product-thumbnail">
+                                                <div class="product-thumbnail-wrapper">
+                                                    <img class="product-thumbnail-image" alt="Tôi Vẽ - Phương Pháp Tự Học Vẽ Truyện Tranh" src="//product.hstatic.net/1000363117/product/toi_ve_cc_af4a7b96100e49c8a9dbbdd1cfc4178c_small.jpg">
+                                                </div>
+                                                <span class="product-thumbnail-quantity" aria-hidden="true">3</span>
+                                            </div>
+                                        </td>
+                                        <td class="product-description">
+                                            <span class="product-description-name order-summary-emphasis">Tôi Vẽ - Phương Pháp Tự Học Vẽ Truyện Tranh</span>
+                                        </td>
+                                        <td class="product-quantity visually-hidden">3</td>
+                                        <td class="product-price">
+                                            <span class="order-summary-emphasis">240,000₫</span>
+                                        </td>
+                                    </tr>
+                                    <tr class="product" data-product-id="1061656080" data-variant-id="1140220309">
+                                        <td class="product-image">
+                                            <div class="product-thumbnail">
+                                                <div class="product-thumbnail-wrapper">
+                                                    <img class="product-thumbnail-image" alt="Bộ Sách Chân Dung - Wolfgang Amadeus Mozart Là Ai? (Tái Bản 2024)" src="//product.hstatic.net/1000363117/product/8935309504046_e76ac777c7c24a6580a98a7f5372e975_small.jpg">
+                                                </div>
+                                                <span class="product-thumbnail-quantity" aria-hidden="true">1</span>
+                                            </div>
+                                        </td>
+                                        <td class="product-description">
+                                            <span class="product-description-name order-summary-emphasis">Bộ Sách Chân Dung - Wolfgang Amadeus Mozart Là Ai? (Tái Bản 2024)</span>
+                                        </td>
+                                        <td class="product-quantity visually-hidden">1</td>
+                                        <td class="product-price">
+                                            <span class="order-summary-emphasis">53,100₫</span>
+                                        </td>
+                                    </tr>
+                                    <tr class="product" data-product-id="1062167411" data-variant-id="1141570876">
+                                        <td class="product-image">
+                                            <div class="product-thumbnail">
+                                                <div class="product-thumbnail-wrapper">
+                                                    <img class="product-thumbnail-image" alt="Truyện Hay Cho Bé 0-6 Tuổi - Tập 2 (Tái Bản 2024)" src="//product.hstatic.net/1000363117/product/hh-bia-1-truyen-hay-cho-be-0-6-t_ec4caa0dda8d474fbbf3d2f0336c6087_small.jpg">
+                                                </div>
+                                                <span class="product-thumbnail-quantity" aria-hidden="true">3</span>
+                                            </div>
+                                        </td>
+                                        <td class="product-description">
+                                            <span class="product-description-name order-summary-emphasis">Truyện Hay Cho Bé 0-6 Tuổi - Tập 2 (Tái Bản 2024)</span>
+                                        </td>
+                                        <td class="product-quantity visually-hidden">3</td>
+                                        <td class="product-price">
+                                            <span class="order-summary-emphasis">318,600₫</span>
+                                        </td>
+                                    </tr>
+                            </tbody>
+                            </table>
+                        </div>
+                        <div class="order-summary-section order-summary-section-discount">
+                            <form class="form_discount_add">
+                                <input name="utf8" type="hidden" value="✓">
+                                <div class="fieldset">
+                                    <div class="field  ">
+                                        <div class="field-input-btn-wrapper">
+                                            <div class="field-input-wrapper">
+                                                <label class="field-label" for="discount.code">Mã giảm giá</label>
+                                                <input placeholder="Mã giảm giá" class="field-input" data-discount-field="true" autocomplete="false" autocapitalize="off" spellcheck="false" size="30" type="text" id="discount.code" name="discount.code" value="">
+                                            </div>
+                                            <button type="submit" class="field-input-btn btn btn-default btn-disabled">
+                                                <span class="btn-content">Sử dụng</span>
+                                                <i class="btn-spinner icon icon-button-spinner"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="order-summary-section order-summary-section-total-lines payment-lines" data-order-summary-section="payment-lines">
+                            <table class="total-line-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col"><span class="visually-hidden">Mô tả</span></th>
+                                        <th scope="col"><span class="visually-hidden">Giá</span></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="total-line total-line-subtotal">
+                                        <td class="total-line-name">Tạm tính</td>
+                                        <td class="total-line-price">
+                                            <span class="order-summary-emphasis" data-checkout-subtotal-price-target="61170000">
+                                                611,700₫
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr class="total-line total-line-shipping">
+                                        <td class="total-line-name">Phí ship</td>
+                                        <td class="total-line-price">
+                                            <span class="order-summary-emphasis" data-checkout-total-shipping-target="6000000">
+                                             60,000 đ</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tfoot class="total-line-table-footer">
+                                    <tr class="total-line">
+                                        <td class="total-line-name payment-due-label">
+                                            <span class="payment-due-label-total">Tổng tiền</span>
+                                        </td>
+                                        <td class="total-line-name payment-due">
+                                            <span class="payment-due-currency">VND</span>
+                                            <span class="payment-due-price" data-checkout-payment-due-target="67170000">
+                                                671,700₫
+                                            </span>
+                                            <span class="checkout_version" display:none="" data_checkout_version="27">
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+       </div> 
+    </div>
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <strong> Đặt hành thành công! </strong>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="submitForm()">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    submitForm = function(){
+        document.querySelector("#form-js").submit(); 
+    }
+
+</script>

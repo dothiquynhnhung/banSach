@@ -1,0 +1,35 @@
+
+
+.col-fhs-main-body {
+    background: #F0F0F0 !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+}
+
+.my-account.user-detail {
+    background-color: #fff;
+    padding: 15px !important;
+}
+.page-title {
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+}
+
+.d-flex.justify-content-center {
+    gap: 40px;
+}
+
+.btn-save-confirm {
+    background: #00ab9f;
+    height: 36px;
+    width: 200px;
+    color: white;
+    font-weight: 700;
+    font-size: 15px;
+    border: none;
+    font-weight: 700;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+}

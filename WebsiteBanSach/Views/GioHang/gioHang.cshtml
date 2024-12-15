@@ -1,0 +1,102 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Giỏ hàng của bạn – Cá Chép Bookstore";
+    Layout = "_Layout";
+}
+<section id="breadcrumb-wrapper">
+    <div class="breadcrumb-content">
+        <div class="wrapper">
+            <div class="inner">
+                <div class="breadcrumb-small">
+                    <a href="/" title="Quay trở về trang chủ">Trang chủ</a>
+                    <span class="mr_lr">&nbsp;/&nbsp;</span>
+                    <a href="/collections/sach-tieng-viet" target="_self">
+                        <span>Giỏ hàng của bạn - Cá chép Bookstore</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="PageContainer" class="is-moved-by-drawer">
+    <main class="main-content">
+        <div id="page-wrapper">
+            <div class="wrapper">
+                <div class="inner">
+                    <h1>Giỏ hàng</h1>
+                    <form action="@Url.Action("thanhToan", "ThanhToan")" class="cart table-wrap medium--hide small--hide">
+                        <table class="cart-table full table--responsive">
+                            <thead class="cart__row cart__header-labels">
+                                <tr>
+                                    <th colspan="2" class="text-center">Thông tin chi tiết sản phẩm</th>
+                                    <th class="text-center">Đơn giá</th>
+                                    <th class="text-center">Số lượng</th>
+                                    <th class="text-right">Tổng giá</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="cart__row table__section">
+                                    <td data-label="Sản phẩm">
+                                        <a href="@Url.Action("chitietsanpham", "ChiTietSanPham")" class="cart__image">
+                                            <img src="//product.hstatic.net/1000363117/product/toi_ve_cc_af4a7b96100e49c8a9dbbdd1cfc4178c_medium.jpg" alt="Tôi Vẽ - Phương Pháp Tự Học Vẽ Truyện Tranh">
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="@Url.Action("chitietsanpham", "ChiTietSanPham")" class="h4">
+                                            Tôi Vẽ - Phương Pháp Tự Học Vẽ Truyện Tranh
+                                        </a>
+                                        <a href="/cart/change?line=1&amp;quantity=0" class="cart__remove">
+                                            <small>Xóa</small>
+                                        </a>
+                                    </td>
+                                    <td data-label="Đơn giá">
+                                        <span class="h3">
+                                            80,000₫
+                                        </span>
+                                    </td>
+                                    <td data-label="Số lượng">
+                                        <div class="js-qty">
+                                            <button type="button" class="js-qty__adjust js-qty__adjust--minus icon-fallback-text" data-id="" data-qty="2">
+                                                <span class="icon icon-minus" aria-hidden="true"></span>
+                                                <span class="fallback-text" aria-hidden="true">−</span>
+                                                <span class="visually-hidden">Giảm số lượng sản phẩm đi 1</span>
+                                            </button>
+                                            <input type="number" class="js-qty__num" value="3" min="1" data-id="" aria-label="quantity" pattern="[0-9]*" name="updates[]" id="updates_">
+                                            <button type="button" class="js-qty__adjust js-qty__adjust--plus icon-fallback-text" data-id="" data-qty="31">
+                                                <span class="icon icon-plus" aria-hidden="true"></span>
+                                                <span class="fallback-text" aria-hidden="true">+</span>
+                                                <span class="visually-hidden">Tăng số lượng sản phẩm lên 1</span>
+                                            </button>
+                                        </div>
+                                    </td>
+                                    <td data-label="Tổng giá" class="text-right">
+                                        <span class="h3">
+                                            240,000₫
+                                        </span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="grid cart__row">
+                            <div class="grid__item two-thirds small--one-whole">
+                                <label for="CartSpecialInstructions">Chú thích cho chủ cửa hàng</label>
+                                <textarea name="note" class="input-full" id="CartSpecialInstructions"></textarea>
+                            </div>
+                            <div class="grid__item text-right one-third small--one-whole">
+                                <p>
+                                    <span class="cart__subtotal-title">Tổng tiền</span>
+                                    <span class="h3 cart__subtotal">293,100₫</span>
+                                </p>
+                                <button type="submit" name="checkout" class="btn">Thanh toán</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
