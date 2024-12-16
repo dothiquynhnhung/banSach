@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="TacGia">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="maTG" type="xs:string" minOccurs="0" />
+                <xs:element name="tenTG" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <TacGia>
+    <maTG>TG001     </maTG>
+    <tenTG>Nguyễn Nhật Ánh</tenTG>
+  </TacGia>
+  <TacGia>
+    <maTG>TG002     </maTG>
+    <tenTG>Trịnh Xuân Thuận</tenTG>
+  </TacGia>
+  <TacGia>
+    <maTG>TG003     </maTG>
+    <tenTG>Nguyễn Du</tenTG>
+  </TacGia>
+  <TacGia>
+    <maTG>TG004     </maTG>
+    <tenTG>Tolstoy</tenTG>
+  </TacGia>
+  <TacGia>
+    <maTG>TG005     </maTG>
+    <tenTG>Charles Dickens</tenTG>
+  </TacGia>
+  <TacGia>
+    <maTG>TG006     </maTG>
+    <tenTG>Victor Hugo</tenTG>
+  </TacGia>
+  <TacGia>
+    <maTG>TG007     </maTG>
+    <tenTG>Mark Twain</tenTG>
+  </TacGia>
+  <TacGia>
+    <maTG>TG008     </maTG>
+    <tenTG>Hemingway</tenTG>
+  </TacGia>
+  <TacGia>
+    <maTG>TG009     </maTG>
+    <tenTG>JK Rowling</tenTG>
+  </TacGia>
+  <TacGia>
+    <maTG>TG010     </maTG>
+    <tenTG>George Orwell</tenTG>
+  </TacGia>
+</NewDataSet>

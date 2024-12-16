@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="NhaXuatBan">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="maNXB" type="xs:string" minOccurs="0" />
+                <xs:element name="tenNXB" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <NhaXuatBan>
+    <maNXB>NXB001    </maNXB>
+    <tenNXB>Nhà Xuất Bản Kim Đồng</tenNXB>
+  </NhaXuatBan>
+  <NhaXuatBan>
+    <maNXB>NXB002    </maNXB>
+    <tenNXB>Nhà Xuất Bản Trẻ</tenNXB>
+  </NhaXuatBan>
+  <NhaXuatBan>
+    <maNXB>NXB003    </maNXB>
+    <tenNXB>Nhà Xuất Bản Văn Học</tenNXB>
+  </NhaXuatBan>
+  <NhaXuatBan>
+    <maNXB>NXB004    </maNXB>
+    <tenNXB>Nhà Xuất Bản Giáo Dục</tenNXB>
+  </NhaXuatBan>
+  <NhaXuatBan>
+    <maNXB>NXB005    </maNXB>
+    <tenNXB>Nhà Xuất Bản Phụ Nữ</tenNXB>
+  </NhaXuatBan>
+  <NhaXuatBan>
+    <maNXB>NXB006    </maNXB>
+    <tenNXB>Nhà Xuất Bản Thanh Niên</tenNXB>
+  </NhaXuatBan>
+  <NhaXuatBan>
+    <maNXB>NXB007    </maNXB>
+    <tenNXB>Nhà Xuất Bản Lao Động</tenNXB>
+  </NhaXuatBan>
+  <NhaXuatBan>
+    <maNXB>NXB008    </maNXB>
+    <tenNXB>Nhà Xuất Bản Khoa Học Tự Nhiên</tenNXB>
+  </NhaXuatBan>
+  <NhaXuatBan>
+    <maNXB>NXB009    </maNXB>
+    <tenNXB>Nhà Xuất Bản Tổng Hợp</tenNXB>
+  </NhaXuatBan>
+  <NhaXuatBan>
+    <maNXB>NXB010    </maNXB>
+    <tenNXB>Nhà Xuất Bản Sự Thật</tenNXB>
+  </NhaXuatBan>
+</NewDataSet>

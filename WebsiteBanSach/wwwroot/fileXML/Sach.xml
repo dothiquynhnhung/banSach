@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Sach">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="maSach" type="xs:string" minOccurs="0" />
+                <xs:element name="tenSach" type="xs:string" minOccurs="0" />
+                <xs:element name="namXB" type="xs:int" minOccurs="0" />
+                <xs:element name="soTrang" type="xs:int" minOccurs="0" />
+                <xs:element name="anhSach" type="xs:string" minOccurs="0" />
+                <xs:element name="moTa" type="xs:string" minOccurs="0" />
+                <xs:element name="soLuong" type="xs:int" minOccurs="0" />
+                <xs:element name="trongLuong" type="xs:string" minOccurs="0" />
+                <xs:element name="giaBan" type="xs:decimal" minOccurs="0" />
+                <xs:element name="maTG" type="xs:string" minOccurs="0" />
+                <xs:element name="maTheLoai" type="xs:string" minOccurs="0" />
+                <xs:element name="maNXB" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <Sach>
+    <maSach>S001      </maSach>
+    <tenSach>Tôi Thấy Hoa Vàng</tenSach>
+    <namXB>2010</namXB>
+    <soTrang>250</soTrang>
+    <anhSach>hoa_vang.jpg</anhSach>
+    <moTa>Câu chuyện tuổi thơ đẹp.</moTa>
+    <soLuong>100</soLuong>
+    <trongLuong>300g</trongLuong>
+    <giaBan>150000.0000</giaBan>
+    <maTG>TG001     </maTG>
+    <maTheLoai>TL001     </maTheLoai>
+    <maNXB>NXB001    </maNXB>
+  </Sach>
+  <Sach>
+    <maSach>S002      </maSach>
+    <tenSach>Mắt Biếc</tenSach>
+    <namXB>2000</namXB>
+    <soTrang>350</soTrang>
+    <anhSach>mat_biec.jpg</anhSach>
+    <moTa>Một chuyện tình buồn.</moTa>
+    <soLuong>120</soLuong>
+    <trongLuong>350g</trongLuong>
+    <giaBan>180000.0000</giaBan>
+    <maTG>TG001     </maTG>
+    <maTheLoai>TL001     </maTheLoai>
+    <maNXB>NXB001    </maNXB>
+  </Sach>
+  <Sach>
+    <maSach>S003      </maSach>
+    <tenSach>Vũ Trụ Trong Quả Hồ Đào</tenSach>
+    <namXB>2002</namXB>
+    <soTrang>300</soTrang>
+    <anhSach>vutru.jpg</anhSach>
+    <moTa>Khám phá bí ẩn.</moTa>
+    <soLuong>50</soLuong>
+    <trongLuong>400g</trongLuong>
+    <giaBan>200000.0000</giaBan>
+    <maTG>TG002     </maTG>
+    <maTheLoai>TL003     </maTheLoai>
+    <maNXB>NXB002    </maNXB>
+  </Sach>
+  <Sach>
+    <maSach>S004      </maSach>
+    <tenSach>Chiến Tranh Và Hòa Bình</tenSach>
+    <namXB>1869</namXB>
+    <soTrang>1200</soTrang>
+    <anhSach>chien_tranh.jpg</anhSach>
+    <moTa>Kiệt tác văn học.</moTa>
+    <soLuong>30</soLuong>
+    <trongLuong>1.5kg</trongLuong>
+    <giaBan>400000.0000</giaBan>
+    <maTG>TG004     </maTG>
+    <maTheLoai>TL001     </maTheLoai>
+    <maNXB>NXB003    </maNXB>
+  </Sach>
+  <Sach>
+    <maSach>S005      </maSach>
+    <tenSach>Truyện Kiều</tenSach>
+    <namXB>1813</namXB>
+    <soTrang>500</soTrang>
+    <anhSach>truyen_kieu.jpg</anhSach>
+    <moTa>Tuyệt phẩm văn học.</moTa>
+    <soLuong>200</soLuong>
+    <trongLuong>500g</trongLuong>
+    <giaBan>120000.0000</giaBan>
+    <maTG>TG003     </maTG>
+    <maTheLoai>TL005     </maTheLoai>
+    <maNXB>NXB004    </maNXB>
+  </Sach>
+  <Sach>
+    <maSach>S006      </maSach>
+    <tenSach>Thép Đã Tôi Thế Đấy</tenSach>
+    <namXB>1934</namXB>
+    <soTrang>450</soTrang>
+    <anhSach>thep.jpg</anhSach>
+    <moTa>Câu chuyện cách mạng.</moTa>
+    <soLuong>100</soLuong>
+    <trongLuong>400g</trongLuong>
+    <giaBan>100000.0000</giaBan>
+    <maTG>TG008     </maTG>
+    <maTheLoai>TL001     </maTheLoai>
+    <maNXB>NXB005    </maNXB>
+  </Sach>
+  <Sach>
+    <maSach>S007      </maSach>
+    <tenSach>Harry Potter 1</tenSach>
+    <namXB>1997</namXB>
+    <soTrang>450</soTrang>
+    <anhSach>hp1.jpg</anhSach>
+    <moTa>Truyện thiếu nhi nổi tiếng.</moTa>
+    <soLuong>300</soLuong>
+    <trongLuong>600g</trongLuong>
+    <giaBan>250000.0000</giaBan>
+    <maTG>TG009     </maTG>
+    <maTheLoai>TL003     </maTheLoai>
+    <maNXB>NXB006    </maNXB>
+  </Sach>
+  <Sach>
+    <maSach>S008      </maSach>
+    <tenSach>1984</tenSach>
+    <namXB>1949</namXB>
+    <soTrang>320</soTrang>
+    <anhSach>1984.jpg</anhSach>
+    <moTa>Tác phẩm phản địa đàng.</moTa>
+    <soLuong>70</soLuong>
+    <trongLuong>300g</trongLuong>
+    <giaBan>150000.0000</giaBan>
+    <maTG>TG010     </maTG>
+    <maTheLoai>TL007     </maTheLoai>
+    <maNXB>NXB003    </maNXB>
+  </Sach>
+  <Sach>
+    <maSach>S009      </maSach>
+    <tenSach>Tâm Lý Học Đám Đông</tenSach>
+    <namXB>1895</namXB>
+    <soTrang>200</soTrang>
+    <anhSach>tamly.jpg</anhSach>
+    <moTa>Phân tích đám đông.</moTa>
+    <soLuong>80</soLuong>
+    <trongLuong>250g</trongLuong>
+    <giaBan>100000.0000</giaBan>
+    <maTG>TG004     </maTG>
+    <maTheLoai>TL010     </maTheLoai>
+    <maNXB>NXB007    </maNXB>
+  </Sach>
+  <Sach>
+    <maSach>S010      </maSach>
+    <tenSach>Hoa Ban Trắng</tenSach>
+    <namXB>2020</namXB>
+    <soTrang>150</soTrang>
+    <anhSach>hoaban.jpg</anhSach>
+    <moTa>Truyện ngắn ý nghĩa.</moTa>
+    <soLuong>90</soLuong>
+    <trongLuong>200g</trongLuong>
+    <giaBan>80000.0000</giaBan>
+    <maTG>TG001     </maTG>
+    <maTheLoai>TL002     </maTheLoai>
+    <maNXB>NXB001    </maNXB>
+  </Sach>
+</NewDataSet>

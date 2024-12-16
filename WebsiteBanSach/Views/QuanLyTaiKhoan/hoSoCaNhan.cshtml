@@ -13,30 +13,30 @@
         <div class="page-title">
             <h1 style="font-weight:600;">Hồ sơ cá nhân</h1>
         </div>
-        <form action="" class="form-account-info">
+        <form accept-charset="UTF-8" asp-controller="QuanLyTaiKhoan" asp-action="hoSoCaNhan" method="get" class="form-account-info">
             <div>
                 <div class="mb-3 row">
                     <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
                     <div class="col-sm-10">
-                        <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
+                        <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="@ViewData["email"]">
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-2 col-form-label">Họ và tên </label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="hoVaTen">
+                        <input type="text" class="form-control" name="tenKH" value="@ViewData["tenKH"]">
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-2 col-form-label">Số điện thoại </label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="soDienThoai">
+                        <input type="text" class="form-control" name="SDT" value="@ViewData["SDT"]">
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-2 col-form-label">Địa chỉ giao hàng</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="soDienThoai">
+                        <input type="text" class="form-control" name="diaChi" value="@ViewData["diaChi"]">
                     </div>
                 </div>
             </div>

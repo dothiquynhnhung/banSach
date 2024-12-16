@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="KhachHang">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="maKH" type="xs:string" minOccurs="0" />
+                <xs:element name="tenKH" type="xs:string" minOccurs="0" />
+                <xs:element name="matKhau" type="xs:string" minOccurs="0" />
+                <xs:element name="SDT" type="xs:string" minOccurs="0" />
+                <xs:element name="email" type="xs:string" minOccurs="0" />
+                <xs:element name="diaChi" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <KhachHang>
+    <maKH>KH001     </maKH>
+    <tenKH>Nguyễn Văn A</tenKH>
+    <matKhau>abc789</matKhau>
+    <SDT>0912345671</SDT>
+    <email>a.nguyen@example.com</email>
+    <diaChi>123 Lê Lợi, Hà Nội</diaChi>
+  </KhachHang>
+  <KhachHang>
+    <maKH>KH002     </maKH>
+    <tenKH>Trần Thị B</tenKH>
+    <matKhau>123abc</matKhau>
+    <SDT>0912345672</SDT>
+    <email>b.tran@example.com</email>
+    <diaChi>456 Trần Hưng Đạo, TP.HCM</diaChi>
+  </KhachHang>
+</NewDataSet>

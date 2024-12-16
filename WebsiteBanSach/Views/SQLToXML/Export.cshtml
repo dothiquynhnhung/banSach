@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Export All Tables to XML";
+}
+
+<h2>Export All Tables to XML</h2>
+
+@if (ViewBag.Message != null)
+{
+    <p>@ViewBag.Message</p>
+}
+
+<form method="get" action="@Url.Action("ExportAllTables", "SQLToXML")">
+    <button type="submit">Export All Tables</button>
+</form>

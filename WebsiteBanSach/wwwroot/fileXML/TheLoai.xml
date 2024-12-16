@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="TheLoai">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="maTheLoai" type="xs:string" minOccurs="0" />
+                <xs:element name="tenTheLoai" type="xs:string" minOccurs="0" />
+                <xs:element name="maDanhMuc" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <TheLoai>
+    <maTheLoai>TL001     </maTheLoai>
+    <tenTheLoai>Tiểu Thuyết</tenTheLoai>
+    <maDanhMuc>DM001     </maDanhMuc>
+  </TheLoai>
+  <TheLoai>
+    <maTheLoai>TL002     </maTheLoai>
+    <tenTheLoai>Truyện Ngắn</tenTheLoai>
+    <maDanhMuc>DM001     </maDanhMuc>
+  </TheLoai>
+  <TheLoai>
+    <maTheLoai>TL003     </maTheLoai>
+    <tenTheLoai>Vật Lý</tenTheLoai>
+    <maDanhMuc>DM002     </maDanhMuc>
+  </TheLoai>
+  <TheLoai>
+    <maTheLoai>TL004     </maTheLoai>
+    <tenTheLoai>Triết Học</tenTheLoai>
+    <maDanhMuc>DM005     </maDanhMuc>
+  </TheLoai>
+  <TheLoai>
+    <maTheLoai>TL005     </maTheLoai>
+    <tenTheLoai>Thơ</tenTheLoai>
+    <maDanhMuc>DM001     </maDanhMuc>
+  </TheLoai>
+  <TheLoai>
+    <maTheLoai>TL006     </maTheLoai>
+    <tenTheLoai>Lịch Sử Thế Giới</tenTheLoai>
+    <maDanhMuc>DM004     </maDanhMuc>
+  </TheLoai>
+  <TheLoai>
+    <maTheLoai>TL007     </maTheLoai>
+    <tenTheLoai>Kỹ Năng Sống</tenTheLoai>
+    <maDanhMuc>DM003     </maDanhMuc>
+  </TheLoai>
+  <TheLoai>
+    <maTheLoai>TL008     </maTheLoai>
+    <tenTheLoai>Chính Trị Học</tenTheLoai>
+    <maDanhMuc>DM005     </maDanhMuc>
+  </TheLoai>
+  <TheLoai>
+    <maTheLoai>TL009     </maTheLoai>
+    <tenTheLoai>Trang Trí Nội Thất</tenTheLoai>
+    <maDanhMuc>DM002     </maDanhMuc>
+  </TheLoai>
+  <TheLoai>
+    <maTheLoai>TL010     </maTheLoai>
+    <tenTheLoai>Nấu Ăn Việt Nam</tenTheLoai>
+    <maDanhMuc>DM003     </maDanhMuc>
+  </TheLoai>
+</NewDataSet>

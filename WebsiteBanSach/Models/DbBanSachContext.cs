@@ -33,13 +33,13 @@ public partial class DbBanSachContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Data Source=LAPTOP-5TSOTHIM\\MHANG;Initial Catalog=dbBanSach;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
+        => optionsBuilder.UseSqlServer("Data Source=DESKTOP-D6HVN2B;Initial Catalog=dbBanSach;Integrated Security=True;Trust Server Certificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<ChiTietHoaDon>(entity =>
         {
-            entity.HasKey(e => new { e.MaHd, e.MaSach }).HasName("PK__ChiTietH__F71B1369549EE780");
+            entity.HasKey(e => new { e.MaHd, e.MaSach }).HasName("PK__ChiTietH__F71B1369AA3D3FEB");
 
             entity.ToTable("ChiTietHoaDon");
 
@@ -71,7 +71,7 @@ public partial class DbBanSachContext : DbContext
 
         modelBuilder.Entity<DanhMuc>(entity =>
         {
-            entity.HasKey(e => e.MaDanhMuc).HasName("PK__DanhMuc__6B0F914CA977C297");
+            entity.HasKey(e => e.MaDanhMuc).HasName("PK__DanhMuc__6B0F914C71C5F923");
 
             entity.ToTable("DanhMuc");
 
@@ -87,7 +87,7 @@ public partial class DbBanSachContext : DbContext
 
         modelBuilder.Entity<HoaDon>(entity =>
         {
-            entity.HasKey(e => e.MaHd).HasName("PK__HoaDon__7A3E148653D9EE5D");
+            entity.HasKey(e => e.MaHd).HasName("PK__HoaDon__7A3E1486072530BF");
 
             entity.ToTable("HoaDon");
 
@@ -113,13 +113,13 @@ public partial class DbBanSachContext : DbContext
 
         modelBuilder.Entity<KhachHang>(entity =>
         {
-            entity.HasKey(e => e.MaKh).HasName("PK__KhachHan__7A3ECFE43B831E92");
+            entity.HasKey(e => e.MaKh).HasName("PK__KhachHan__7A3ECFE43F4EFE8D");
 
             entity.ToTable("KhachHang");
 
-            entity.HasIndex(e => e.Email, "UQ__KhachHan__AB6E61643CD5DF30").IsUnique();
+            entity.HasIndex(e => e.Email, "UQ__KhachHan__AB6E6164D4A0B1A5").IsUnique();
 
-            entity.HasIndex(e => e.Sdt, "UQ__KhachHan__CA1930A5DA55FFDC").IsUnique();
+            entity.HasIndex(e => e.Sdt, "UQ__KhachHan__CA1930A597A29ED0").IsUnique();
 
             entity.Property(e => e.MaKh)
                 .HasMaxLength(10)
@@ -149,7 +149,7 @@ public partial class DbBanSachContext : DbContext
 
         modelBuilder.Entity<NhaXuatBan>(entity =>
         {
-            entity.HasKey(e => e.MaNxb).HasName("PK__NhaXuatB__26999B20B77A199B");
+            entity.HasKey(e => e.MaNxb).HasName("PK__NhaXuatB__26999B20256BF15D");
 
             entity.ToTable("NhaXuatBan");
 
@@ -165,7 +165,7 @@ public partial class DbBanSachContext : DbContext
 
         modelBuilder.Entity<Sach>(entity =>
         {
-            entity.HasKey(e => e.MaSach).HasName("PK__Sach__D2507EF99A688E5B");
+            entity.HasKey(e => e.MaSach).HasName("PK__Sach__D2507EF952F49DB0");
 
             entity.ToTable("Sach");
 
@@ -222,7 +222,7 @@ public partial class DbBanSachContext : DbContext
 
         modelBuilder.Entity<TacGium>(entity =>
         {
-            entity.HasKey(e => e.MaTg).HasName("PK__TacGia__7A226252CD8C351C");
+            entity.HasKey(e => e.MaTg).HasName("PK__TacGia__7A226252BFFB5D9B");
 
             entity.Property(e => e.MaTg)
                 .HasMaxLength(10)
@@ -236,7 +236,7 @@ public partial class DbBanSachContext : DbContext
 
         modelBuilder.Entity<TheLoai>(entity =>
         {
-            entity.HasKey(e => e.MaTheLoai).HasName("PK__TheLoai__2E9E267E585577D2");
+            entity.HasKey(e => e.MaTheLoai).HasName("PK__TheLoai__2E9E267E64852991");
 
             entity.ToTable("TheLoai");
 

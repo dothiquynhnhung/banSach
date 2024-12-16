@@ -8,11 +8,12 @@ body {
     font-family: "Roboto", sans-serif;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 .page-container {
     display: flex;
     width: 935px;
@@ -20,21 +21,22 @@ body {
     margin: auto;
     margin-top: 12px;
 }
+
 .tabs {
     display: flex;
     position: relative;
 }
 
-.tabs .line {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 3px;
-    border-radius: 10px;
-    background-color: #00ab9f;
-    transition: all 0.2s ease;
-}
+    .tabs .line {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 3px;
+        border-radius: 10px;
+        background-color: #00ab9f;
+        transition: all 0.2s ease;
+    }
 
 .tab-item {
     min-width: 80px;
@@ -49,12 +51,14 @@ body {
     transition: all 0.5s ease;
 }
 
-.tab-item:first-child {
-    border-top-left-radius: 5px;
-}
-.tab-item:last-child {
-    border-top-right-radius: 5px;
-}
+    .tab-item:first-child {
+        border-top-left-radius: 5px;
+    }
+
+    .tab-item:last-child {
+        border-top-right-radius: 5px;
+    }
+
 .tab-icon {
     font-size: 24px;
     width: 32px;
@@ -81,14 +85,14 @@ body {
     display: none;
 }
 
-.tab-pane.active {
-    display: block;
-}
+    .tab-pane.active {
+        display: block;
+    }
 
-.tab-pane h2 {
-    font-size: 24px;
-    margin-bottom: 8px;
-}
+    .tab-pane h2 {
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
 
 .orders {
     margin-top: 48px;
@@ -100,20 +104,23 @@ body {
     padding: 24px;
     background-color: #fff;
 }
-.product{
+
+.product {
     color: #000;
-}
-.product:hover {
-    color: #000;
-}
-.product .product__des img {
-    height: 80px;
-    width: 80px;
 }
 
-.product .product__des-item {
-    margin-left: 16px;
-}
+    .product:hover {
+        color: #000;
+    }
+
+    .product .product__des img {
+        height: 80px;
+        width: 80px;
+    }
+
+    .product .product__des-item {
+        margin-left: 16px;
+    }
 
 .product__des-item .product__name {
     margin-bottom: 5px;

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="HoaDon">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="maHD" type="xs:string" minOccurs="0" />
+                <xs:element name="maKH" type="xs:string" minOccurs="0" />
+                <xs:element name="ngayThanhToan" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="diaChiGiaoDich" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <HoaDon>
+    <maHD>HD001     </maHD>
+    <maKH>KH001     </maKH>
+    <ngayThanhToan>2024-12-01T00:00:00+07:00</ngayThanhToan>
+    <diaChiGiaoDich>123 Lê Lợi, Hà Nội</diaChiGiaoDich>
+  </HoaDon>
+  <HoaDon>
+    <maHD>HD002     </maHD>
+    <maKH>KH002     </maKH>
+    <ngayThanhToan>2024-12-02T00:00:00+07:00</ngayThanhToan>
+    <diaChiGiaoDich>456 Trần Hưng Đạo, TP.HCM</diaChiGiaoDich>
+  </HoaDon>
+  <HoaDon>
+    <maHD>HD003     </maHD>
+    <maKH>KH002     </maKH>
+    <ngayThanhToan>2024-12-03T00:00:00+07:00</ngayThanhToan>
+    <diaChiGiaoDich>78 Nguyễn Trãi, Đà Nẵng</diaChiGiaoDich>
+  </HoaDon>
+  <HoaDon>
+    <maHD>HD004     </maHD>
+    <maKH>KH001     </maKH>
+    <ngayThanhToan>2024-12-04T00:00:00+07:00</ngayThanhToan>
+    <diaChiGiaoDich>99 Quang Trung, Hải Phòng</diaChiGiaoDich>
+  </HoaDon>
+  <HoaDon>
+    <maHD>HD005     </maHD>
+    <maKH>KH002     </maKH>
+    <ngayThanhToan>2024-12-05T00:00:00+07:00</ngayThanhToan>
+    <diaChiGiaoDich>45 Lý Thường Kiệt, Cần Thơ</diaChiGiaoDich>
+  </HoaDon>
+</NewDataSet>

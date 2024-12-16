@@ -26,15 +26,16 @@
 			<h1>Đăng nhập</h1>
 
 			<div class="form-vertical">
-				<form accept-charset="UTF-8" action="/account" id="create_customer" method="post">
+				<form accept-charset="UTF-8" asp-controller="QuanLyTaiKhoan" asp-action="Login" method="post" id="create_customer">
+					@Html.AntiForgeryToken()
 					<input name="form_type" type="hidden" value="create_customer">
 					<input name="utf8" type="hidden" value="✓">
 
 					<label for="Email" class="hidden-label">Email</label>
-					<input type="email" name="customer[email]" id="Email" class="input-full email" placeholder="Email" autocorrect="off" autocapitalize="off">
+					<input type="email" name="email" id="Email" class="input-full email" placeholder="Email" autocorrect="off" autocapitalize="off">
 
 					<label for="CreatePassword" class="hidden-label">Mật khẩu</label>
-					<input type="password" name="customer[password]" id="CreatePassword" class="input-full password" placeholder="Mật khẩu">
+					<input type="password" name="matKhau" id="CreatePassword" class="input-full password" placeholder="Mật khẩu">
 
 					<div class="btn-login">
 						<input type="submit" value="Đăng nhập" class="btn btn--full">
@@ -44,7 +45,7 @@
 						<a href="#">Quên mật khẩu?</a>
 					</div>
 
-					</form>
+				</form>
 			</div>
 
 		</div>
