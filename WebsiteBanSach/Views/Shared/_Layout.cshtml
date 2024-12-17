@@ -1,24 +1,33 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - WebsiteBanSach</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/WebsiteBanSach.styles.css" asp-append-version="true" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="https://theme.hstatic.net/1000363117/1000911694/14/favicon.png?v=606" />
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend+Deca:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/font/fontawesome-free-6.7.1-web/fontawesome-free-6.7.1-web/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link href="//theme.hstatic.net/1000363117/1000911694/14/timber.scss.css?v=606" rel="stylesheet" type="text/css" media="all">
     <link href="//theme.hstatic.net/1000363117/1000911694/14/suplo-style.scss.css?v=606" rel="stylesheet" type="text/css" media="all">
     <link href="//theme.hstatic.net/1000363117/1000911694/14/owl.carousel.css?v=606" rel="stylesheet" type="text/css" media="all">
     <link href="//theme.hstatic.net/1000363117/1000911694/14/owl.theme.css?v=606" rel="stylesheet" type="text/css" media="all">
     <link href="//theme.hstatic.net/1000363117/1000911694/14/owl.transitions.css?v=606" rel="stylesheet" type="text/css" media="all">
-    <link rel="stylesheet" href="~/css/layout.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/layout.css" />
     @RenderSection("LinkCss", required: false)
 </head>
+@{
+    int tong = Context.Session.GetInt32("tongGioHang") ?? 0;
+    var tenKh = Context.Session.GetString("tenKH") ?? "";
+}
 <body>
     <header id="header">
         <div class="header-desktop medium--hide small--hide">
@@ -38,7 +47,7 @@
                             </div>
                             <div class="grid__item large--two-thirds">
                                 <ul class="hdt-right-menu no-bullets text-right">
-                                    <li><a href="@Url.Action("hoSoCaNhan", "QuanLyTaiKhoan")" class="active">Xin chào, <span>@ViewData["tenKH"]</span></a></li>
+                                    <li><a href="@Url.Action("hoSoCaNhan", "QuanLyTaiKhoan")" class="active">Xin chào, <span>@tenKh</span></a></li>
                                     <li><span>|</span></li>
                                     <li><a href="">Đăng xuất</a></li>
                                 </ul>
@@ -95,9 +104,12 @@
                                     <a class="hdc-cart hd-cart" href="@Url.Action("gioHang", "GioHang")">
                                         Giỏ hàng của bạn
                                         <svg class="svg-inline--fa fa-shopping-cart fa-w-18" aria-hidden="true" data-prefix="fas" data-icon="shopping-cart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M528.12 301.319l47.273-208C578.806 78.301 567.391 64 551.99 64H159.208l-9.166-44.81C147.758 8.021 137.93 0 126.529 0H24C10.745 0 0 10.745 0 24v16c0 13.255 10.745 24 24 24h69.883l70.248 343.435C147.325 417.1 136 435.222 136 456c0 30.928 25.072 56 56 56s56-25.072 56-56c0-15.674-6.447-29.835-16.824-40h209.647C430.447 426.165 424 440.326 424 456c0 30.928 25.072 56 56 56s56-25.072 56-56c0-22.172-12.888-41.332-31.579-50.405l5.517-24.276c3.413-15.018-8.002-29.319-23.403-29.319H218.117l-6.545-32h293.145c11.206 0 20.92-7.754 23.403-18.681z"></path></svg>
+                                        @if (tong != 0)
+                                        {
                                         <span id="cartCountDesktop">
-                                            3
+                                            @tong
                                         </span>
+                                        }
                                     </a>
                                 </div>
                             </div>

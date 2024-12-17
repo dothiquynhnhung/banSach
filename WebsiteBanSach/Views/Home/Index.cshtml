@@ -2,7 +2,10 @@
     ViewData["Title"] = "Ghé Ngay Nhà Sách Cá Chép Trực Tuyến - CACHEP.VN – Cá Chép Bookstore";
     Layout = "_Layout";
 }
-
+@{
+    List<WebsiteBanSach.Models.DanhMuc> danhMucs = ViewBag.danhMucs;
+    List<WebsiteBanSach.Models.Sach> sachs = ViewBag.sachs;
+}
 <div id="megamenu-navbar" class="not-index">
     <div class="main-navbar medium--hide small--hide">
         <div class="wrapper">
@@ -16,27 +19,31 @@
                             </div>
                             <div class="megamenu-body">
                                 <ul class="no-bullets">
-                                    <li class="li-dropdown">
-                                        <a href="/collections/sach-tieng-viet">Sách Tiếng Việt </a>
-                                    </li>
-                                    <li class="li-dropdown">
-                                        <a href="/collections/sach-tieng-viet">Sách Tiếng Việt </a>
-                                    </li>
-                                    <li class="li-dropdown">
-                                        <a href="/collections/sach-tieng-viet">Sách Tiếng Việt </a>
-                                    </li>
-                                    <li class="li-dropdown">
-                                        <a href="/collections/sach-tieng-viet">Sách Tiếng Việt </a>
-                                    </li>
+                                    @if (danhMucs != null)
+                                    {
+                                        foreach (WebsiteBanSach.Models.DanhMuc item in danhMucs)
+                                        {
+                                            <li class="li-dropdown">
+                                                <a href="/collections/sach-tieng-viet">@item.TenDanhMuc</a>
+                                            </li>
+                                        }
+                                       
+                                    }
+                                    
+                                   
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="grid__item pd-left0 large--eight-twelfths">
                         <ul class="navbar-list no-bullets">
-                            <li><a href="">Sách Thiếu Nhi</a></li>
-                            <li><a href="">Sách Chữ Ký</a></li>
-                            <li><a href="">Sách giới hạn</a></li>
+                              @if (danhMucs != null)
+                               {
+                                foreach (WebsiteBanSach.Models.DanhMuc item in danhMucs)
+                                {
+                                    <li><a href="">@item.TenDanhMuc</a></li>
+                                }
+                               }
                         </ul>
                     </div>
                 </div>
@@ -52,15 +59,15 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="10000">
-                <img src="./imgs/ms_banner_img1.jpg" class="d-block w-100" alt="...">
+                <img src="~/imgs/ms_banner_img1.jpg" class="d-block w-100" alt="...">
 
             </div>
             <div class="carousel-item" data-bs-interval="2000">
-                <img src="./imgs/ms_banner_img2.jpg" class="d-block w-100" alt="...">
+                <img src="~/imgs/ms_banner_img2.jpg" class="d-block w-100" alt="...">
 
             </div>
             <div class="carousel-item">
-                <img src="./imgs/ms_banner_img4.webp" class="d-block w-100" alt="...">
+                <img src="~/imgs/ms_banner_img4.webp" class="d-block w-100" alt="...">
 
             </div>
         </div>
@@ -144,120 +151,33 @@
 
                             <div class="grid__item large--four-fifths medium--three-quarters pd-left10">
                                 <div class="grid-uniform mg-left-10">
-                                    <!-- START ITEM -->
-                                    <div class="grid__item pd-left10 large--one-quarter medium--one-third small--one-halF">
-                                        <a href="@Url.Action("chiTietSanPham", "ChiTietSanPham")" class="product-item">
-                                            <div class="product-img">
-                                                <img id="1027125194" class="lazyload" src="//product.hstatic.net/1000363117/product/toi_ve_cc_af4a7b96100e49c8a9dbbdd1cfc4178c_medium.jpg" data-src="//product.hstatic.net/1000363117/product/toi_ve_cc_af4a7b96100e49c8a9dbbdd1cfc4178c_medium.jpg" alt="Tôi Vẽ - Phương Pháp Tự Học Vẽ Truyện Tranh">
-                                                <div class="product-tagsaleoff">
-                                                    -20%
-                                                </div>
+                                    @if (sachs != null)
+                                    {
+                                        foreach(var i in sachs)
+                                        {
+                                            <!-- START ITEM -->
+                                            <div class="grid__item pd-left10 large--one-quarter medium--one-third small--one-halF">
+                                                <a href="@Url.Action("chiTietSanPham", "ChiTietSanPham", new {idSach = i.MaSach})" class="product-item">
+                                                    <div class="product-img">
+                                                        <img id="1027125194" class="lazyload" src="~/imgs/@i.AnhSach">
+                                                        <div class="product-tagsaleoff">
+                                                            -20%
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-title text-center">
+                                                            @i.TenSach
+                                                    </div>
+                                                    <div class="product-price clearfix">
+                                                        <span class="current-price">@WebsiteBanSach.Models.Sach.FormatCurrency(i.GiaBan)</span>
+                                                        <span class="original-price">@WebsiteBanSach.Models.Sach.FormatCurrency((i.GiaBan.HasValue ? (i.GiaBan.Value / 0.8m) : 0))</span>
+                                                    </div>
+                                                </a>
                                             </div>
-                                            <div class="product-title text-center">
-                                                Tôi Vẽ - Phương Pháp Tự Học Vẽ Truyện Tranh
-                                            </div>
-                                            <div class="product-price clearfix">
-                                                <span class="current-price">80,000₫</span>
-                                                <span class="original-price"><s>100,000₫</s></span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <!-- END ITEM -->
-                                    <!-- START ITEM -->
-                                    <div class="grid__item pd-left10 large--one-quarter medium--one-third small--one-halF">
-                                        <a href="@Url.Action("chiTietSanPham", "ChiTietSanPham")" class="product-item">
-                                            <div class="product-img">
-                                                <img id="1027125194" class="lazyload" src="//product.hstatic.net/1000363117/product/toi_ve_cc_af4a7b96100e49c8a9dbbdd1cfc4178c_medium.jpg" data-src="//product.hstatic.net/1000363117/product/toi_ve_cc_af4a7b96100e49c8a9dbbdd1cfc4178c_medium.jpg" alt="Tôi Vẽ - Phương Pháp Tự Học Vẽ Truyện Tranh">
-                                                <div class="product-tagsaleoff">
-                                                    -20%
-                                                </div>
-                                            </div>
-                                            <div class="product-title text-center">
-                                                Tôi Vẽ - Phương Pháp Tự Học Vẽ Truyện Tranh
-                                            </div>
-                                            <div class="product-price clearfix">
-                                                <span class="current-price">80,000₫</span>
-                                                <span class="original-price"><s>100,000₫</s></span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <!-- END ITEM -->
-                                    <!-- START ITEM -->
-                                    <div class="grid__item pd-left10 large--one-quarter medium--one-third small--one-halF">
-                                        <a href="@Url.Action("chiTietSanPham", "ChiTietSanPham")"0 class="product-item">
-                                            <div class="product-img">
-                                                <img id="1027125194" class="lazyload" src="//product.hstatic.net/1000363117/product/toi_ve_cc_af4a7b96100e49c8a9dbbdd1cfc4178c_medium.jpg" data-src="//product.hstatic.net/1000363117/product/toi_ve_cc_af4a7b96100e49c8a9dbbdd1cfc4178c_medium.jpg" alt="Tôi Vẽ - Phương Pháp Tự Học Vẽ Truyện Tranh">
-                                                <div class="product-tagsaleoff">
-                                                    -20%
-                                                </div>
-                                            </div>
-                                            <div class="product-title text-center">
-                                                Tôi Vẽ - Phương Pháp Tự Học Vẽ Truyện Tranh
-                                            </div>
-                                            <div class="product-price clearfix">
-                                                <span class="current-price">80,000₫</span>
-                                                <span class="original-price"><s>100,000₫</s></span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <!-- END ITEM -->
-                                    <!-- START ITEM -->
-                                    <div class="grid__item pd-left10 large--one-quarter medium--one-third small--one-halF">
-                                        <a href="" class="product-item">
-                                            <div class="product-img">
-                                                <img id="1027125194" class="lazyload" src="//product.hstatic.net/1000363117/product/toi_ve_cc_af4a7b96100e49c8a9dbbdd1cfc4178c_medium.jpg" data-src="//product.hstatic.net/1000363117/product/toi_ve_cc_af4a7b96100e49c8a9dbbdd1cfc4178c_medium.jpg" alt="Tôi Vẽ - Phương Pháp Tự Học Vẽ Truyện Tranh">
-                                                <div class="product-tagsaleoff">
-                                                    -20%
-                                                </div>
-                                            </div>
-                                            <div class="product-title text-center">
-                                                Tôi Vẽ - Phương Pháp Tự Học Vẽ Truyện Tranh
-                                            </div>
-                                            <div class="product-price clearfix">
-                                                <span class="current-price">80,000₫</span>
-                                                <span class="original-price"><s>100,000₫</s></span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <!-- END ITEM -->
-                                    <!-- START ITEM -->
-                                    <div class="grid__item pd-left10 large--one-quarter medium--one-third small--one-halF">
-                                        <a href="" class="product-item">
-                                            <div class="product-img">
-                                                <img id="1027125194" class="lazyload" src="//product.hstatic.net/1000363117/product/toi_ve_cc_af4a7b96100e49c8a9dbbdd1cfc4178c_medium.jpg" data-src="//product.hstatic.net/1000363117/product/toi_ve_cc_af4a7b96100e49c8a9dbbdd1cfc4178c_medium.jpg" alt="Tôi Vẽ - Phương Pháp Tự Học Vẽ Truyện Tranh">
-                                                <div class="product-tagsaleoff">
-                                                    -20%
-                                                </div>
-                                            </div>
-                                            <div class="product-title text-center">
-                                                Tôi Vẽ - Phương Pháp Tự Học Vẽ Truyện Tranh
-                                            </div>
-                                            <div class="product-price clearfix">
-                                                <span class="current-price">80,000₫</span>
-                                                <span class="original-price"><s>100,000₫</s></span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <!-- END ITEM -->
-                                    <!-- START ITEM -->
-                                    <div class="grid__item pd-left10 large--one-quarter medium--one-third small--one-halF">
-                                        <a href="" class="product-item">
-                                            <div class="product-img">
-                                                <img id="1027125194" class="lazyload" src="//product.hstatic.net/1000363117/product/toi_ve_cc_af4a7b96100e49c8a9dbbdd1cfc4178c_medium.jpg" data-src="//product.hstatic.net/1000363117/product/toi_ve_cc_af4a7b96100e49c8a9dbbdd1cfc4178c_medium.jpg" alt="Tôi Vẽ - Phương Pháp Tự Học Vẽ Truyện Tranh">
-                                                <div class="product-tagsaleoff">
-                                                    -20%
-                                                </div>
-                                            </div>
-                                            <div class="product-title text-center">
-                                                Tôi Vẽ - Phương Pháp Tự Học Vẽ Truyện Tranh
-                                            </div>
-                                            <div class="product-price clearfix">
-                                                <span class="current-price">80,000₫</span>
-                                                <span class="original-price"><s>100,000₫</s></span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <!-- END ITEM -->
+                                            <!-- END ITEM -->
+                                        }                                     
+                                       
+                                    }
+
 
 
 

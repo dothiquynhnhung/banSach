@@ -1,9 +1,14 @@
-﻿<!DOCTYPE html>
+﻿@{
+	Layout = "";
+}
+
+
+<!DOCTYPE html>
 <html>
 <head>
     <title>Đăng ký tài khoản</title>
 	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-	<link rel="stylesheet" href="./css/dangKy.css" />
+	<link rel="stylesheet" href="~/css/dangKy.css" />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -26,19 +31,26 @@
 			<h1>Tạo tài khoản</h1>
 
 			<div class="form-vertical">
-				<form accept-charset="UTF-8" action="/account" id="create_customer" method="post">
-					<input name="form_type" type="hidden" value="create_customer">
-					<input name="utf8" type="hidden" value="✓">
+				<form accept-charset="UTF-8" action="@Url.Action("Register", "QuanLyTaiKhoan")" id="create_customer" method="POST">
 
-					<label for="FullName" class="hidden-label">Tên đăng nhập</label>
-					<input type="text" name="customer[last_name]" id="LastName" class="input-full" placeholder="Tên đăng nhập" autocapitalize="words">
 
-					<label for="Email" class="hidden-label">Email</label>
-					<input type="email" name="customer[email]" id="Email" class="input-full" placeholder="Email" autocorrect="off" autocapitalize="off">
+					<label  class="hidden-label">Họ và tên</label>
+					<input type="text" name="customerName" id="LastName" class="input-full" placeholder="Họ và tên" autocapitalize="words" required>
+
+					<label class="hidden-label">Email</label>
+					<input type="email" name="email" id="Email" class="input-full" placeholder="Email" autocorrect="off" autocapitalize="off" required>
+
+					<label for="address" class="hidden-label">Địa chỉ</label>
+					<input type="text" name="address" id="address" class="input-full" placeholder="Địa chỉ" autocorrect="off" autocapitalize="off" required>
+
+					<label for="address" class="hidden-label">Số điện thoại</label>
+					<input type="text" name="telphone" id="address" class="input-full" placeholder="Số điện thoại" autocorrect="off" autocapitalize="off" required>
 
 					<label for="CreatePassword" class="hidden-label">Mật khẩu</label>
-					<input type="password" name="customer[password]" id="CreatePassword" class="input-full" placeholder="Mật khẩu">
+					<input type="password" name="pass" id="CreatePassword" class="input-full" placeholder="Mật khẩu" required>
 
+					<label for="" class="hidden-label">Nhập lại mật khẩu</label>
+					<input type="password" name="" id="" class="input-full" placeholder="Nhập lại mật khẩu" required>
 					<p>
 						<input type="submit" value="Đăng ký" class="btn btn--full">
 					</p>
@@ -46,8 +58,6 @@
 						Bạn đã có tài khoản?&#160
 						<a href="#">Đăng nhập</a>
 					</div>
-					
-
 				</form>
 			</div>
 

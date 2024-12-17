@@ -4,19 +4,19 @@ using WebsiteBanSach.Models;
 
 namespace WebsiteBanSach.Controllers
 {
-    public class QuanLyTaiKhoan : Controller
-    {
-        public IActionResult dangKy()
-        {
-            return View();
-        }
+	public class QuanLyTaiKhoan : Controller
+	{
+		public IActionResult dangKy()
+		{
+			return View();
+		}
 
 		// DANGNHAP
 		public IActionResult dangNhap()
-        {
-            return View();
-        }
-		
+		{
+			return View();
+		}
+
 		[HttpPost]
 		public IActionResult Login(string email, string matKhau)
 		{
@@ -29,11 +29,12 @@ namespace WebsiteBanSach.Controllers
 					.Where(kh => kh.Element("email") != null && kh.Element("matKhau") != null)
 					.Select(kh => new KhachHang
 					{
-						Email = kh.Element("email")?.Value.Trim(),
-						MatKhau = kh.Element("matKhau")?.Value.Trim(),
-						TenKh = kh.Element("tenKH")?.Value,
-						DiaChi = kh.Element("diaChi")?.Value,
-						Sdt = kh.Element("SDT")?.Value
+						MaKh = kh.Element("maKH")?.Value.Trim() ?? string.Empty,
+						Email = kh.Element("email")?.Value.Trim() ?? string.Empty,
+						MatKhau = kh.Element("matKhau")?.Value.Trim() ?? string.Empty,
+						TenKh = kh.Element("tenKH")?.Value ?? string.Empty,
+						DiaChi = kh.Element("diaChi")?.Value ?? string.Empty,
+						Sdt = kh.Element("SDT")?.Value ?? string.Empty
 					})
 					.ToList();
 
@@ -42,15 +43,17 @@ namespace WebsiteBanSach.Controllers
 
 				if (khachHang != null)
 				{
-                    HttpContext.Session.SetString("tenKH", khachHang.TenKh);
-                    HttpContext.Session.SetString("email", khachHang.Email);
-                    HttpContext.Session.SetString("SDT", khachHang.Sdt);
-                    HttpContext.Session.SetString("diaChi", khachHang.DiaChi);
-                    return RedirectToAction("Index", "Home");
+					HttpContext.Session.SetString("maKhachHang", khachHang.MaKh);
+					HttpContext.Session.SetString("tenKH", khachHang.TenKh);
+					HttpContext.Session.SetString("email", khachHang.Email);
+					HttpContext.Session.SetString("SDT", khachHang.Sdt);
+					HttpContext.Session.SetString("diaChi", khachHang.DiaChi);
+					return RedirectToAction("Index", "Home");
 				}
 				else
 				{
-					return RedirectToAction("dangNhap", "DangNhap");
+					ViewBag.Error = "Tên đăng nhập hoặc mật khẩu không đúng, vui lòng thử lại!";
+					return RedirectToAction("dangNhap", "QuanLyTaiKhoan");
 				}
 
 			}
@@ -106,24 +109,52 @@ namespace WebsiteBanSach.Controllers
 		[HttpGet]
 		public IActionResult hoSoCaNhan()
 		{
-            var tenKH = HttpContext.Session.GetString("tenKH");
-            var email = HttpContext.Session.GetString("email");
-            var SDT = HttpContext.Session.GetString("SDT");
-            var diaChi = HttpContext.Session.GetString("diaChi");
+			var tenKH = HttpContext.Session.GetString("tenKH");
+			var email = HttpContext.Session.GetString("email");
+			var SDT = HttpContext.Session.GetString("SDT");
+			var diaChi = HttpContext.Session.GetString("diaChi");
 
-            ViewData["email"] = email;
-            ViewData["diaChi"] = diaChi;
-            ViewData["tenKH"] = tenKH;
-            ViewData["SDT"] = SDT;
+			ViewData["email"] = email;
+			ViewData["diaChi"] = diaChi;
+			ViewData["tenKH"] = tenKH;
+			ViewData["SDT"] = SDT;
 
-            return View();
+			return View();
 
 
+		}
+
+		[HttpPost]
+		public IActionResult Register(String customerName, String email, String address,String telphone,String pass)
+		{
+			KhachHang kh = new KhachHang()
+			{
+				MaKh = KhachHang.GenerateRandomId(), 
+				TenKh = customerName, 
+				MatKhau = pass, 
+				Sdt = telphone, 
+				Email = email,
+				DiaChi = address, 
+            };
+			WriteKhachHangToXml(kh); 
+
+            return RedirectToAction("dangNhap", "QuanLyTaiKhoan");
+
+		}
+        public static void WriteKhachHangToXml(KhachHang hd)
+        {
+            XDocument doc = XDocument.Load("wwwroot/fileXML/KhachHang.xml");
+            XElement invoice = new XElement("KhachHang",
+                new XElement("maKH", hd.MaKh),
+                new XElement("tenKH", hd.TenKh	),
+                new XElement("matKhau", hd.MatKhau),
+                new XElement("SDT", hd.Sdt),
+                new XElement("email", hd.Email),
+                new XElement("diaChi", hd.DiaChi)
+            );
+            doc.Element("NewDataSet")?.Add(invoice);
+            doc.Save("wwwroot/fileXML/KhachHang.xml");
         }
-
-
-
-
     }
 }
 

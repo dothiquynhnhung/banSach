@@ -36,4 +36,12 @@
     <email>b.tran@example.com</email>
     <diaChi>456 Trần Hưng Đạo, TP.HCM</diaChi>
   </KhachHang>
+  <KhachHang>
+    <maKH>KH4478</maKH>
+    <tenKH>Đào Hoàng Minh Hằng</tenKH>
+    <matKhau>123</matKhau>
+    <SDT>0846120304</SDT>
+    <email>daohoangminhhang24@gmail.com</email>
+    <diaChi>260 Nguyễn Thị Định</diaChi>
+  </KhachHang>
 </NewDataSet>

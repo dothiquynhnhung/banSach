@@ -48,4 +48,10 @@
     <ngayThanhToan>2024-12-05T00:00:00+07:00</ngayThanhToan>
     <diaChiGiaoDich>45 Lý Thường Kiệt, Cần Thơ</diaChiGiaoDich>
   </HoaDon>
+  <HoaDon>
+    <maHD>HD5100</maHD>
+    <maKH>KH001</maKH>
+    <ngayThanhToan>12/17/2024</ngayThanhToan>
+    <diaChiGiaoDich>Thanh Tân, Đà Nẵng</diaChiGiaoDich>
+  </HoaDon>
 </NewDataSet>

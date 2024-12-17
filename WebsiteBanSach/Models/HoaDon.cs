@@ -16,4 +16,10 @@ public partial class HoaDon
     public virtual ICollection<ChiTietHoaDon> ChiTietHoaDons { get; set; } = new List<ChiTietHoaDon>();
 
     public virtual KhachHang? MaKhNavigation { get; set; }
+    public static string GenerateRandomHoaDon()
+    {
+        Random random = new Random();
+        int number = random.Next(1, 10000)+ DateTime.Now.Second; 
+        return $"HD{number:D4}"; 
+    }
 }

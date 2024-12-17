@@ -1,9 +1,12 @@
-﻿<!DOCTYPE html>
+﻿@{
+	Layout = "";
+}
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Đăng nhập</title>
 	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-	<link rel="stylesheet" href="./css/dangNhap.css" />
+	<link rel="stylesheet" href="~/css/dangNhap.css" />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -36,16 +39,16 @@
 
 					<label for="CreatePassword" class="hidden-label">Mật khẩu</label>
 					<input type="password" name="matKhau" id="CreatePassword" class="input-full password" placeholder="Mật khẩu">
-
+					<div class="error">@ViewBag.Error</div>
+					
+					<div class="forgot-pass mb-2">
+						<a href="#">Quên mật khẩu?</a>
+					</div>
 					<div class="btn-login">
 						<input type="submit" value="Đăng nhập" class="btn btn--full">
 					</div>
-					
-					<div class="forgot-pass">
-						<a href="#">Quên mật khẩu?</a>
-					</div>
-
 				</form>
+				<div>Bạn chưa có tài khoản? <a href="@Url.Action("dangKy", "QuanLyTaiKhoan")">Đăng ký ngay</a></div>
 			</div>
 
 		</div>

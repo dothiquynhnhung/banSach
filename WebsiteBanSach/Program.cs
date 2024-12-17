@@ -8,7 +8,7 @@ builder.Services.AddSession(options =>
     options.Cookie.Name = "UserSession";
     options.Cookie.IsEssential = true;
 });
-
+builder.Services.AddDistributedMemoryCache();
 
 var app = builder.Build();
 
@@ -30,6 +30,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=QuanLyTaiKhoan}/{action=dangNhap}/{id?}");
+    pattern: "{controller=QuanLyTaiKhoan}/{action=dangKy}/{id?}");
 
 app.Run();

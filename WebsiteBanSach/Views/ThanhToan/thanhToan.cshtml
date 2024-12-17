@@ -6,6 +6,10 @@
 @section LinkCss{
     <link rel="stylesheet" type="text/css" href="~/css/thanhToan.css" />
 }
+@{
+    List<WebsiteBanSach.Models.GioHang> gioHangs = Context.Session.GetObjectFromJson<List<WebsiteBanSach.Models.GioHang>>("Cart");
+
+}
  <div class="content">
        <div class="wrap">
         <div class="main">
@@ -140,62 +144,37 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr class="product" data-product-id="1027125194" data-variant-id="1059516180">
-                                        <td class="product-image">
-                                            <div class="product-thumbnail">
-                                                <div class="product-thumbnail-wrapper">
-                                                    <img class="product-thumbnail-image" alt="Tôi Vẽ - Phương Pháp Tự Học Vẽ Truyện Tranh" src="//product.hstatic.net/1000363117/product/toi_ve_cc_af4a7b96100e49c8a9dbbdd1cfc4178c_small.jpg">
-                                                </div>
-                                                <span class="product-thumbnail-quantity" aria-hidden="true">3</span>
-                                            </div>
-                                        </td>
-                                        <td class="product-description">
-                                            <span class="product-description-name order-summary-emphasis">Tôi Vẽ - Phương Pháp Tự Học Vẽ Truyện Tranh</span>
-                                        </td>
-                                        <td class="product-quantity visually-hidden">3</td>
-                                        <td class="product-price">
-                                            <span class="order-summary-emphasis">240,000₫</span>
-                                        </td>
-                                    </tr>
-                                    <tr class="product" data-product-id="1061656080" data-variant-id="1140220309">
-                                        <td class="product-image">
-                                            <div class="product-thumbnail">
-                                                <div class="product-thumbnail-wrapper">
-                                                    <img class="product-thumbnail-image" alt="Bộ Sách Chân Dung - Wolfgang Amadeus Mozart Là Ai? (Tái Bản 2024)" src="//product.hstatic.net/1000363117/product/8935309504046_e76ac777c7c24a6580a98a7f5372e975_small.jpg">
-                                                </div>
-                                                <span class="product-thumbnail-quantity" aria-hidden="true">1</span>
-                                            </div>
-                                        </td>
-                                        <td class="product-description">
-                                            <span class="product-description-name order-summary-emphasis">Bộ Sách Chân Dung - Wolfgang Amadeus Mozart Là Ai? (Tái Bản 2024)</span>
-                                        </td>
-                                        <td class="product-quantity visually-hidden">1</td>
-                                        <td class="product-price">
-                                            <span class="order-summary-emphasis">53,100₫</span>
-                                        </td>
-                                    </tr>
-                                    <tr class="product" data-product-id="1062167411" data-variant-id="1141570876">
-                                        <td class="product-image">
-                                            <div class="product-thumbnail">
-                                                <div class="product-thumbnail-wrapper">
-                                                    <img class="product-thumbnail-image" alt="Truyện Hay Cho Bé 0-6 Tuổi - Tập 2 (Tái Bản 2024)" src="//product.hstatic.net/1000363117/product/hh-bia-1-truyen-hay-cho-be-0-6-t_ec4caa0dda8d474fbbf3d2f0336c6087_small.jpg">
-                                                </div>
-                                                <span class="product-thumbnail-quantity" aria-hidden="true">3</span>
-                                            </div>
-                                        </td>
-                                        <td class="product-description">
-                                            <span class="product-description-name order-summary-emphasis">Truyện Hay Cho Bé 0-6 Tuổi - Tập 2 (Tái Bản 2024)</span>
-                                        </td>
-                                        <td class="product-quantity visually-hidden">3</td>
-                                        <td class="product-price">
-                                            <span class="order-summary-emphasis">318,600₫</span>
-                                        </td>
-                                    </tr>
+                                    @if (gioHangs != null)
+                                    {
+                                        foreach(var i in gioHangs)
+                                        {
+                                            <tr class="product" data-product-id="1027125194" data-variant-id="1059516180">
+                                                <td class="product-image">
+                                                    <div class="product-thumbnail">
+                                                        <div class="product-thumbnail-wrapper">
+                                                            <img class="product-thumbnail-image" src="~/imgs/@i.Sach.AnhSach">
+                                                        </div>
+                                                        <span class="product-thumbnail-quantity" aria-hidden="true">@i.SoLuong</span>
+                                                    </div>
+                                                </td>
+                                                <td class="product-description">
+                                                    <span class="product-description-name order-summary-emphasis">@i.Sach.TenSach</span>
+                                                </td>
+                                                <td class="product-quantity visually-hidden">@i.SoLuong</td>
+                                                <td class="product-price">
+                                                    <span class="order-summary-emphasis">@WebsiteBanSach.Models.Sach.FormatCurrency(i.TotalPrice)</span>
+                                                </td>
+                                            </tr>
+
+                                        }
+                                    }
+                                   
+                                   
                             </tbody>
                             </table>
                         </div>
                         <div class="order-summary-section order-summary-section-discount">
-                            <form class="form_discount_add">
+                            <form class="form_discount_add" action="@Url.Action("thanhToan", "ThanhToan)")>
                                 <input name="utf8" type="hidden" value="✓">
                                 <div class="fieldset">
                                     <div class="field  ">
@@ -226,7 +205,7 @@
                                         <td class="total-line-name">Tạm tính</td>
                                         <td class="total-line-price">
                                             <span class="order-summary-emphasis" data-checkout-subtotal-price-target="61170000">
-                                                611,700₫
+                                                @WebsiteBanSach.Models.Sach.FormatCurrency(WebsiteBanSach.Models.GioHang.GetTotalPrice(gioHangs))
                                             </span>
                                         </td>
                                     </tr>
@@ -234,7 +213,7 @@
                                         <td class="total-line-name">Phí ship</td>
                                         <td class="total-line-price">
                                             <span class="order-summary-emphasis" data-checkout-total-shipping-target="6000000">
-                                             60,000 đ</span>
+                                             60.000đ</span>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -246,7 +225,7 @@
                                         <td class="total-line-name payment-due">
                                             <span class="payment-due-currency">VND</span>
                                             <span class="payment-due-price" data-checkout-payment-due-target="67170000">
-                                                671,700₫
+                                                @WebsiteBanSach.Models.Sach.FormatCurrency(WebsiteBanSach.Models.GioHang.GetTotalPrice(gioHangs) + 60000)
                                             </span>
                                             <span class="checkout_version" display:none="" data_checkout_version="27">
                                             </span>

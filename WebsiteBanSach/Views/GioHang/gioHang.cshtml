@@ -5,6 +5,9 @@
     ViewData["Title"] = "Giỏ hàng của bạn – Cá Chép Bookstore";
     Layout = "_Layout";
 }
+@{
+    List<WebsiteBanSach.Models.GioHang> gioHangs = Context.Session.GetObjectFromJson<List<WebsiteBanSach.Models.GioHang>>("Cart");
+}
 <section id="breadcrumb-wrapper">
     <div class="breadcrumb-content">
         <div class="wrapper">
@@ -38,23 +41,25 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @if(gioHangs!=null){
+                                    foreach(var i in gioHangs){
                                 <tr class="cart__row table__section">
                                     <td data-label="Sản phẩm">
-                                        <a href="@Url.Action("chitietsanpham", "ChiTietSanPham")" class="cart__image">
-                                            <img src="//product.hstatic.net/1000363117/product/toi_ve_cc_af4a7b96100e49c8a9dbbdd1cfc4178c_medium.jpg" alt="Tôi Vẽ - Phương Pháp Tự Học Vẽ Truyện Tranh">
+                                        <a href="@Url.Action("chitietsanpham", "ChiTietSanPham", new {idSach = i.Sach.MaSach})" class="cart__image">
+                                            <img src="~/imgs/@i.Sach.AnhSach" alt="Tôi Vẽ - Phương Pháp Tự Học Vẽ Truyện Tranh" style="width:200px;">
                                         </a>
                                     </td>
                                     <td>
-                                        <a href="@Url.Action("chitietsanpham", "ChiTietSanPham")" class="h4">
-                                            Tôi Vẽ - Phương Pháp Tự Học Vẽ Truyện Tranh
+                                        <a href="@Url.Action("chitietsanpham", "ChiTietSanPham", new {idSach = i.Sach.MaSach})" class="h4">
+                                            @i.Sach.TenSach
                                         </a>
-                                        <a href="/cart/change?line=1&amp;quantity=0" class="cart__remove">
+                                        <a href="" class="cart__remove">
                                             <small>Xóa</small>
                                         </a>
                                     </td>
                                     <td data-label="Đơn giá">
                                         <span class="h3">
-                                            80,000₫
+                                          @WebsiteBanSach.Models.Sach.FormatCurrency(i.Sach.GiaBan)
                                         </span>
                                     </td>
                                     <td data-label="Số lượng">
@@ -64,7 +69,7 @@
                                                 <span class="fallback-text" aria-hidden="true">−</span>
                                                 <span class="visually-hidden">Giảm số lượng sản phẩm đi 1</span>
                                             </button>
-                                            <input type="number" class="js-qty__num" value="3" min="1" data-id="" aria-label="quantity" pattern="[0-9]*" name="updates[]" id="updates_">
+                                            <input type="number" class="js-qty__num" value="@i.SoLuong" min="1" data-id="" aria-label="quantity" pattern="[0-9]*" name="updates[]" id="updates_">
                                             <button type="button" class="js-qty__adjust js-qty__adjust--plus icon-fallback-text" data-id="" data-qty="31">
                                                 <span class="icon icon-plus" aria-hidden="true"></span>
                                                 <span class="fallback-text" aria-hidden="true">+</span>
@@ -74,10 +79,11 @@
                                     </td>
                                     <td data-label="Tổng giá" class="text-right">
                                         <span class="h3">
-                                            240,000₫
+                                                    @WebsiteBanSach.Models.Sach.FormatCurrency( @i.TotalPrice)
                                         </span>
                                     </td>
-                                </tr>
+                                    </tr>
+                                }}
                             </tbody>
                         </table>
                         <div class="grid cart__row">
@@ -88,7 +94,7 @@
                             <div class="grid__item text-right one-third small--one-whole">
                                 <p>
                                     <span class="cart__subtotal-title">Tổng tiền</span>
-                                    <span class="h3 cart__subtotal">293,100₫</span>
+                                    <span class="h3 cart__subtotal"> @WebsiteBanSach.Models.Sach.FormatCurrency(WebsiteBanSach.Models.GioHang.GetTotalPrice(gioHangs))</span>
                                 </p>
                                 <button type="submit" name="checkout" class="btn">Thanh toán</button>
                             </div>

@@ -133,3 +133,7 @@ img {
 }
 
 /*  END CSS LAYOUT */
+.error {
+    color: darkred !important;
+}
+

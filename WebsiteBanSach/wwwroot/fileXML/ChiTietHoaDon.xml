@@ -48,4 +48,10 @@
     <soLuongDat>1</soLuongDat>
     <donGia>150000.0000</donGia>
   </ChiTietHoaDon>
+  <ChiTietHoaDon>
+    <maHD>HD5100</maHD>
+    <maSach>S001</maSach>
+    <soLuongDat>100</soLuongDat>
+    <donGia>150000.0000</donGia>
+  </ChiTietHoaDon>
 </NewDataSet>

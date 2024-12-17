@@ -18,4 +18,10 @@ public partial class KhachHang
     public string? DiaChi { get; set; }
 
     public virtual ICollection<HoaDon> HoaDons { get; set; } = new List<HoaDon>();
+    public static string GenerateRandomId()
+    {
+        Random random = new Random();
+        int number = random.Next(1, 10000) + DateTime.Now.Second;
+        return $"KH{number:D4}";
+    }
 }
