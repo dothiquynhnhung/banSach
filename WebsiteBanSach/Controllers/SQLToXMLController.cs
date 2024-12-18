@@ -13,7 +13,7 @@ namespace WebsiteBanSach.Controllers
             SQLtoXML sqlToXML = new SQLtoXML(_connectionString);
             string result = sqlToXML.ExportAllTablesToXML();
 
-            return Content(result);
+            return RedirectToAction("Index", "Home");
         }
     }
 }

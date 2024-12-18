@@ -23,7 +23,7 @@
   <KhachHang>
     <maKH>KH001     </maKH>
     <tenKH>Nguyễn Văn A</tenKH>
-    <matKhau>abc789</matKhau>
+    <matKhau>123456</matKhau>
     <SDT>0912345671</SDT>
     <email>a.nguyen@example.com</email>
     <diaChi>123 Lê Lợi, Hà Nội</diaChi>
@@ -37,11 +37,11 @@
     <diaChi>456 Trần Hưng Đạo, TP.HCM</diaChi>
   </KhachHang>
   <KhachHang>
-    <maKH>KH4478</maKH>
-    <tenKH>Đào Hoàng Minh Hằng</tenKH>
-    <matKhau>123</matKhau>
-    <SDT>0846120304</SDT>
-    <email>daohoangminhhang24@gmail.com</email>
-    <diaChi>260 Nguyễn Thị Định</diaChi>
+    <maKH>KH003     </maKH>
+    <tenKH>Minh Hang</tenKH>
+    <matKhau>12</matKhau>
+    <SDT>0846120202</SDT>
+    <email>a@gmail.com</email>
+    <diaChi>thanh tana</diaChi>
   </KhachHang>
 </NewDataSet>

@@ -1,4 +1,9 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿using Microsoft.EntityFrameworkCore;
+using System;
+using WebsiteBanSach.Controllers;
+using WebsiteBanSach.Models;
+
+var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -9,6 +14,13 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true;
 });
 builder.Services.AddDistributedMemoryCache();
+
+// Đăng ký DbContext nếu bạn sử dụng Entity Framework
+builder.Services.AddDbContext<DbBanSachContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// Đăng ký dịch vụ XMLToSQL vào DI Container
+builder.Services.AddScoped<WebsiteBanSach.Models.XMLToSQL>(); // hoặc AddTransient<XMLToSQL>();
 
 var app = builder.Build();
 
@@ -30,6 +42,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=QuanLyTaiKhoan}/{action=dangKy}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
